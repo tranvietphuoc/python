@@ -1,8 +1,8 @@
-import Person
+import person
 import datetime
 
 #demonstrate about classmdethod and staticmethod of class
-class Teacher(Person.Person):
+class Teacher(person.Person):
     #class variable
     num_of_periods=40
     def __init__(self,first,last,birthday,title):
