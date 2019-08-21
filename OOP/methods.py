@@ -9,15 +9,18 @@ class Teacher(Person.Person):
         super().__init__(first,last,birthday)
         self.title=title
     
+    def get_title(self):
+        return 'title: {}'.format(self.title)
     ## about classmethod
     @classmethod
-    def get_tilte(self):
-        pass
+    def set_periods(cls,num_of_pds):
+        cls.num_of_periods=num_of_pds 
 
 
 
 
 if __name__=='__main__':
-    teacher1=Teacher('vo','son',datetime.datetime(1983,1,1),'Ph.D')
+    teacher1=Teacher('Vo','Son',datetime.datetime(1983,1,1),'Ph.D')
     print(teacher1.num_of_periods)   
-    print(teacher1.get_tilte) 
+    print(teacher1.get_title()) 
+    print(teacher1.set_periods)

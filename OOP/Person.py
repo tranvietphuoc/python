@@ -43,7 +43,7 @@ class Student(Person):
 
 if __name__=='__main__':
     ## create an instantiation
-    stu1=Student('tran','phuoc',datetime.datetime(1993,10,10),'HCMC University of Technology',3.6)
+    stu1=Student('Tran','Phuoc',datetime.datetime(1993,10,10),'HCMC University of Technology',3.6)
     print(stu1.get_info())
     #get age 
     print(stu1.age())
