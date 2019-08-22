@@ -36,8 +36,8 @@ class Teacher(person.Person):
     
     # static method
     @staticmethod
-    def set_seniority():   # just act like a normal function, does not have cls argument
-        pass
+    def is_seniority(seniority):   # just act like a normal function, does not have cls or self argument
+        return True if seniority>=10 else False
     
     #get instances's information
     def get_inf(self):
@@ -71,3 +71,6 @@ if __name__=='__main__':
     new_teacher=Teacher.from_string(str1)
     print(new_teacher)
     print(new_teacher.get_inf())
+    ## static method example
+    print(Teacher.is_seniority(5))
+    print(Teacher.is_seniority(10))
