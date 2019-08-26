@@ -74,6 +74,8 @@ if __name__=='__main__':
     new_teacher=Teacher.from_string(str1)
     print(new_teacher)
     print(new_teacher.get_inf())
+
     ## static method example
     print(Teacher.is_seniority(5))
     print(Teacher.is_seniority(10))
+    
