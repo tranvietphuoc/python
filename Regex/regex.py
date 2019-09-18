@@ -5,9 +5,9 @@
 # basic example
 import re
 
-pattern=r'cookie'
-sequence='cookie'
-if re.match(pattern,sequence):
+pattern = r'cookie'
+sequence = 'cookie'
+if re.match(pattern, sequence):
     print("match")
 else:
     print('not match')
@@ -48,6 +48,6 @@ re.search(r'\A[A-E]ookie','Cookie').group() # print 'Cookie'
 # \b - Lowercase b, matches only the begining or the end of the word
 re.search(r'\b[a-e]ookie','cookie').group() # print 'cookie'
 # \ - Backslash. If the character following the backslash is a recognize escape character
-#the the special meaning of the term is taken. However, if not, the \ character is treated like
-#any other character and pass through
+# the the special meaning of the term is taken. However, if not, the \ character is treated like
+# any other character and pass through
 re.search(r'Back\\stail','Back\stail').group() # This checks for '\' in the string instead of '\t' due to the '\' used
