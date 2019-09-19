@@ -61,7 +61,7 @@ class User:
 # in obj. If attribute_name happens to define __get__(), then attribute_name.__get__(obj)
 # will get call. 
 
-# The magic behind 
+
 
 
 class NonNegative:
