@@ -5,7 +5,7 @@
 # Those method are __get__(self,obj,type=None) --> value, __set__(self,obj,value) --> None, __delete__(self,obj) --> None.
 # If any of those are defined for an object, it is said to be a descriptor. In Python 2.2+
 # In other programming language, descriptors are referred to setter and getter.
-# let's see this code below
+# let's see this code below, and image what happens
 from sqlalchemy import Column, Integer, String
 
 
