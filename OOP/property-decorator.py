@@ -1,7 +1,9 @@
 ############
-#this part take us to the property decorator, setter, getter and deleter of class
-#now, let's start
+# this part take us to the property decorator, setter, getter and deleter of class
+# now, let's start
 import json
+
+
 class Phone:
     def __init__(self,name, osname,price):
         self.name=name

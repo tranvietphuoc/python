@@ -1,14 +1,33 @@
 #this part mention about instance method, class method and static method
 
-import person
 import datetime
 import json
 
 # demonstrate about instance method, class method and static method 
-class Teacher(person.Person):
-    # class variable
-    num_of_periods=40 #periods per week
-    seniority=20      #years
+
+
+class Person:
+    # constructor
+    def __init__(self, first, last, birthday):
+        self.first = first
+        self.last = last
+        self.birthday = birthday  # with datetime format
+        self.email = first+'.'+last+'@email.com'
+    # get full name
+
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last)
+    ## make a function to calculate the age
+
+    def age(self):
+        # use the comparison mechanism between 2 tuples
+        today = datetime.date.today()  # today
+        return today.year-self.birthday.year-((today.month, today.day) < (self.birthday.month, self.birthday.day))
+
+class Teacher(Person):
+    # class variable - class attribute
+    num_of_periods=40 # periods per week
+    seniority=20      # years
     def __init__(self,first,last,birthday,title):
         super().__init__(first,last,birthday) #inheritance
         self.title=title
