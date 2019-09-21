@@ -70,7 +70,7 @@ class Teacher(Person):
         })
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     #create 2 instances of Teacher class
     teach1=Teacher('Vo','Son',datetime.datetime(1983,1,1),'Ph.D')
     teach2=Teacher('Cuong','Luu',datetime.datetime(1976,3,4),'Engineer')
@@ -80,7 +80,7 @@ if __name__=='__main__':
     # methods are functions which are bound to object
     print(teach1.get_title) ## call an instance method of class Teacher
     # the command above is equivalent with this
-    print(Teacher.__dict__['get_title'].__get__(teach1,Teacher)) # take 2 parameter, instance and class
+    print(Teacher.__dict__['get_title'].__get__(teach1, Teacher)) # take 2 parameter, instance and class
     '''
     Because Python can refer to all methods by using __dict__, it has a special object, which is advantage to "bind"
     objects call "descriptor",include:
