@@ -1,4 +1,6 @@
 import http.server
+import urllib3
+
 
 class HTTPServer_RequestHandler(http.server.BaseHTTPRequestHandler):
     # GET method
@@ -18,8 +20,9 @@ class HTTPServer_RequestHandler(http.server.BaseHTTPRequestHandler):
         self.wfile.write(b"</body>")
         self.wfile.write(b"</html>")
 
-port=8080 # http's port
-server_address=("0.0.0.0",port)
-httpd=http.server.HTTPServer(server_address,HTTPServer_RequestHandler)
+port = 8080  # http's port
+server_address = ("0.0.0.0", port)
+httpd = http.server.HTTPServer(server_address, HTTPServer_RequestHandler)
+print('serve at 0.0.0.0:8080')
 httpd.serve_forever()
 # run that Python file and go to the address 0.0.0.0:8080 to see the result
