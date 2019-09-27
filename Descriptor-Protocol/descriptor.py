@@ -81,8 +81,8 @@ class NonNegative:
     # in Python 3.6+. We use new API obj.__set_name(self,owner,name) like below
     # And does not need __init__() method
 
-    def __set_name__(self, name):
-        self.name = name
+    # def __set_name__(self, name):
+    #     self.name = name
 
 
 class FoodOrder():
