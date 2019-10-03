@@ -20,6 +20,7 @@ class HTTPServer_RequestHandler(http.server.BaseHTTPRequestHandler):
         self.wfile.write(b"</body>")
         self.wfile.write(b"</html>")
 
+
 port = 8080  # http's port
 server_address = ('localhost', port)
 httpd = http.server.HTTPServer(server_address, HTTPServer_RequestHandler)

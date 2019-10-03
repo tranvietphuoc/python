@@ -3,7 +3,7 @@
 # let's start
 # ===> Part 1: the base of theory
 # a function can be assigned to a variable
-# def talk(): 
+# def talk():
 #     return "aaa".upper()+"!"
 
 # scream=talk
@@ -89,11 +89,11 @@
 #     def __init__(self,first,last):
 #         self.first=first
 #         self.last=last
-    
+
 #     @p_decor
 #     def get_fullname(self):
 #         return self.first+" "+self.last
-    
+
 # per1=Person("tran","phuoc")
 # print(per1.get_fullname()) #will print <p>tran phuoc</p>
 
@@ -118,7 +118,7 @@
 #     def __init__(self,first,last):
 #         self.first=first
 #         self.last=last
-    
+
 #     @p_decor
 #     def get_fullname(self):
 #         return "My name: {} {}".format(self.first,self.last)
@@ -158,56 +158,69 @@
 # # example:
 import functools
 
+
 def tags(tagname):
     def tags_decor(func):
-        @functools.wraps(func) #we will insert @functools.wraps(..) here
-        def wrapper(*args,**kargs):
-            return "<{0}>{1}</{0}>".format(tagname,func(*args,**kargs)) #notice here
+        @functools.wraps(func)  # we will insert @functools.wraps(..) here
+        def wrapper(*args, **kargs):
+            # notice here
+            return "<{0}>{1}</{0}>".format(tagname, func(*args, **kargs))
         return wrapper
     return tags_decor
+
 
 @tags("p")
 def get_text(name):
     return "lorem ipsum dolor sit amet...{}".format(name)
 
-print(get_text.__name__) #will print get_text here
-print(get_text.__doc__) #will print None here
-print(get_text.__module__) #will print __main__ here
+
+print(get_text.__name__)  # will print get_text here
+print(get_text.__doc__)  # will print None here
+print(get_text.__module__)  # will print __main__ here
 # =======================
 # Decorator can be used for debugging
 # these lines of codes is borrowed from manhhomienbienthuy.bitbucket.io, many thanks to @naa
 # write a decorator print out the times function is implemented
+
+
 def benmark(func):
     import time
-    def wrapper(*args,**kargs):
-        t=time.perf_counter()
-        res=func(*args,**kargs)
+
+    def wrapper(*args, **kargs):
+        t = time.perf_counter()
+        res = func(*args, **kargs)
         print(func.__name__, time.perf_counter()-t)
         return res
     return wrapper
 # write a decorator to write log of codes - print the function's name, which is called
-def logging(func):
-    def wrapper(*args,**kargs):
-        res=func(*args,**kargs)
-        print(func.__name__,args,kargs)
-        return res
-    return wrapper  
 
-#write a decorator to count and print out the number of time to be called of function
-def count(func):
-    def wrapper(*args,**kargs):
-        wrapper.count=wrapper.count+1
-        res=func(*args,**kargs)
-        print('{0} has been used: {1}x'.format(func.__name__,wrapper.count))
+
+def logging(func):
+    def wrapper(*args, **kargs):
+        res = func(*args, **kargs)
+        print(func.__name__, args, kargs)
         return res
-    wrapper.count=0
     return wrapper
 
-@count 
+# write a decorator to count and print out the number of time to be called of function
+
+
+def count(func):
+    def wrapper(*args, **kargs):
+        wrapper.count = wrapper.count+1
+        res = func(*args, **kargs)
+        print('{0} has been used: {1}x'.format(func.__name__, wrapper.count))
+        return res
+    wrapper.count = 0
+    return wrapper
+
+
+@count
 @benmark
 @logging
 def reverse_string(string):
     return string[::-1]
+
 
 print(reverse_string("hello, I'm Tran Viet Phuoc"))
 print(reverse_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit,\

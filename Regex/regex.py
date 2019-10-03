@@ -50,4 +50,4 @@ re.search(r'\b[a-e]ookie', 'cookie').group()  # print 'cookie'
 # \ - Backslash. If the character following the backslash is a recognize escape character
 # the the special meaning of the term is taken. However, if not, the \ character is treated like
 # any other character and pass through
-re.search(r'Back\\stail', 'Back\stail').group()  # This checks for '\' in the string instead of '\t' due to the '\' used
+re.search(r'Back\\stail', 'Back\stail').group()  # This checks for '\' in the string instead of '\t' due to the '\' use
