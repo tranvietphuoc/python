@@ -13,7 +13,7 @@ class User:
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
-# If you ever wonder why don't use __init__() method to initialize for id and 
+# If you ever wonder why don't use __init__() method to initialize for id and
 # name bind to the instances like regular classes do.
 # In Python, there are three ways to access attribute a of the object obj.
 # 1. some_variable=obj.a; 2. obj.a=some_value; 3. del obj.a
@@ -59,9 +59,7 @@ class User:
 # So, we must use descriptors
 # When you call obj.attribute_name, Python will cause your object to look attribute_name
 # in obj. If attribute_name happens to define __get__(), then attribute_name.__get__(obj)
-# will get call. 
-
-
+# will get call.
 
 
 class NonNegative:
@@ -77,7 +75,7 @@ class NonNegative:
         if value < 0:
             raise ValueError("Value must be positive")
         instance.__dict__[self.name] = value
-    
+
     # in Python 3.6+. We use new API obj.__set_name(self,owner,name) like below
     # And does not need __init__() method
 
