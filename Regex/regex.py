@@ -55,19 +55,19 @@ text = """101 COM \t Computers
 
 # re.sub()
 
-print(re.sub('\s+', ' ', text))  # or
+print(re.sub(r'\s+', ' ', text))  # or
 print(regex.sub(' ',text))  # substitute whitespaces in text with single space
 
 # re.split()
 
-print(re.split('\s+', text))  # or
+print(re.split(r'\s+', text))  # or
 print(regex.split(text))  # split text around 1 or more space characters
 
 # re.findall()
 
-regex_num = re.compile('\d+')
-regex_char = re.compile('[A-Z]{3}')
-regex_extra = re.compile('[A-Za-z]{4,}')
+regex_num = re.compile(r'\d+')
+regex_char = re.compile(r'[A-Z]{3}')
+regex_extra = re.compile(r'[A-Za-z]{4,}')
 print(regex_char.findall(text))  # find all course codes
 print(regex_extra.findall(text))  # find all course names
 print(regex_num.findall(text))  # find all numbers within the text
@@ -84,7 +84,7 @@ print('Ending position: ', s.end())
 print(text2[s.start():s.end()])
 print(s.group())  # equivalent to the line above
 
-regex_string = '([0-9]+)\s*([A-Z]{3})\s*([A-Za-z]{4,})'
+regex_string = r'([0-9]+)\s*([A-Z]{3})\s*([A-Za-z]{4,})'
 print(re.findall(regex_string,text))
 
 # greedy matching regex
