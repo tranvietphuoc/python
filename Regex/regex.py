@@ -14,44 +14,82 @@ import re
 # else:
 #     print('not match')
 
-# # The match() function returns a match object if the text matches the pattern. Otherwise it returns None
-# # r'....' is a raw string literal. example: r"\n" is a string with \ and n character. while "\n" is a normal newline character
-# # Wild card Characters: Special characters #############
+"""
+BASIC SYNTAX:
+.: One character except newline
+\.: A period. \ escapes a special character
+\d: One digit
+\D: One non-digit
+\w: One word character including digits
+\W: One non-word character 
+\s: One whitespace
+\S: One non-whitespace
+\b: Word boundary
+\n: Newline
+\t: Tab
+==========================================
+MODIFIERS
+$: End of string
+^: Start of string
+ab|cd: Matches ab or de
+[ab-d]: One character of: a, b, c, d
+[^ab-d]: One character except: a, b, c, d
+(): Items within parenthesis are retrieved
+(a(bc)): Items within the sub-parenthesis are retrieved
+==========================================
+REPETITIONS
+[ab]{2}: Exactly 2 continous occurrences of a or b
+[ab]{2,5}: 2 to 5 continous occurrences of a or b
+[ab]{2,}: 2 or more continous occurrences of a or b
++: One or more
+*: Zero or more
+?: 0 or 1
+"""
 
-# # . - A period, matches any single character except newline character
-# re.search(r'c.ok.e', 'cookie').group()  # print 'cookie'. the group() function return the string matched by re. 
-# # \w - Lowercase w, matches any single letter, digit or underscore
-# re.search(r'co\wk\we', 'cookie').group()  # print 'cookie'. 
-# # \W - Uppercase W, matches any character not part of \w
-# re.search(r'c\Wke', 'c@ke').group()  # print 'c@ke'
-# # \s - Lowercase s, matches a single whitespace character like: space, newline, tab, return
-# re.search(r'Eat\scake', 'Eat cake').group()  # print 'Eat cake'
-# # \S - Uppercase s, matches any character not part of \s
-# re.search(r'Cook\Se', 'Cookie').group()  # print 'Cookie'
-# # \t - Lowercase t, matches tab
-# re.search(r'Eat\tcake', 'Eat    cake').group()  # print 'Eat\tcake'
-# # \n - Lowercase n, matches newline
-# # \r - Lowercase r, matches return
-# # \d - Lowercase d, matches decimal digit 0-9
-# re.search(r'c\d\dkie', 'c00kie').group()  # print 'c00kie'
-# # ^ - Caret, matches a pattern at the start of the string
-# re.search(r'^Eat', 'Eat cake').group()  # print 'Eat'
-# # $ - Matches a pattern at the end of string
-# re.search(r'cake$', 'Eat cake').group()  # print 'cake'
-# # [abc] - Matches a or b or c
-# # [a-zA-Z0-9] - Matches any letter from (a-z) or (A-Z) or (0-9). Characters that are not within a range
-# # can be matched by complementing the set. If the first character of set is ^, all the characters that
-# # are not in the set will be matched
-# re.search(r'Number: [0-6]', 'Number: 5').group()  # print 'Number: 5'
-# print(re.search(r'Number: [^5]', 'Number: 0').group())  # print 'Number: 0'
-# # \A - Uppercase a, matches only at the start of the string. Work across multiple lines as well
-# re.search(r'\A[A-E]ookie', 'Cookie').group()  # print 'Cookie'
-# # \b - Lowercase b, matches only the begining or the end of the word
-# re.search(r'\b[a-e]ookie', 'cookie').group()  # print 'cookie'
-# # \ - Backslash. If the character following the backslash is a recognize escape character
-# # the the special meaning of the term is taken. However, if not, the \ character is treated like
-# # any other character and pass through
-# re.search(r'Back\\stail', 'Back\stail').group()  # This checks for '\' in the string instead of '\t' due to the '\' used
 
 s = r'\s+'
-print(re.compile(s))
+regex = re.compile(s)
+text = """101 COM \t Computers
+205 MAT \t Mathematics
+309 ENG \t English"""
+
+# re.sub()
+
+print(re.sub('\s+', ' ', text))  # or
+print(regex.sub(' ',text))  # substitute whitespaces in text with single space
+
+# re.split()
+
+print(re.split('\s+', text))  # or
+print(regex.split(text))  # split text around 1 or more space characters
+
+# re.findall()
+
+regex_num = re.compile('\d+')
+regex_char = re.compile('[A-Z]{3}')
+regex_extra = re.compile('[A-Za-z]{4,}')
+print(regex_char.findall(text))  # find all course codes
+print(regex_extra.findall(text))  # find all course names
+print(regex_num.findall(text))  # find all numbers within the text
+
+# re.search()
+
+text2 = """COM    Computers
+205 MATH    Mathematics 189"""
+s = regex_num.search(text2)
+
+print(s)  # re.Match object
+print('Starting position: ', s.start())
+print('Ending position: ', s.end())
+print(text2[s.start():s.end()])
+print(s.group())  # equivalent to the line above
+
+regex_string = '([0-9]+)\s*([A-Z]{3})\s*([A-Za-z]{4,})'
+print(re.findall(regex_string,text))
+
+# greedy matching regex
+
+text_html = "<body>Regex Greedy Matching Example</body>"
+print(re.findall('<.*>', text_html))  # print content of text_html
+print(re.findall('<.*?>', text_html))
+print(re.search('<.*?>', text_html).group())  # retrieve the first match 
