@@ -85,7 +85,7 @@ print(text2[s.start():s.end()])
 print(s.group())  # equivalent to the line above
 
 regex_string = r'([0-9]+)\s*([A-Z]{3})\s*([A-Za-z]{4,})'
-print(re.findall(regex_string,text))
+print(re.findall(regex_string, text))
 
 # greedy matching regex
 
