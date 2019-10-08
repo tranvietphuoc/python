@@ -92,4 +92,4 @@ print(re.findall(regex_string, text))
 text_html = "<body>Regex Greedy Matching Example</body>"
 print(re.findall('<.*>', text_html))  # print content of text_html
 print(re.findall('<.*?>', text_html))
-print(re.search('<.*?>', text_html).group())  # retrieve the first match 
+print(re.search('<.*?>', text_html).group())  # retrieve the first match
