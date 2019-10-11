@@ -21,7 +21,7 @@ BASIC SYNTAX:
 \d: One digit
 \D: One non-digit
 \w: One word character including digits
-\W: One non-word character 
+\W: One non-word character
 \s: One whitespace
 \S: One non-whitespace
 \b: Word boundary
