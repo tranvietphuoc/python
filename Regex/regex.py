@@ -14,8 +14,7 @@ import re
 # else:
 #     print('not match')
 
-"""
-BASIC SYNTAX:
+"""BASIC SYNTAX:
 .: One character except newline
 \.: A period. \ escapes a special character
 \d: One digit
@@ -43,8 +42,7 @@ REPETITIONS
 [ab]{2,}: 2 or more continous occurrences of a or b
 +: One or more
 *: Zero or more
-?: 0 or 1
-"""
+?: 0 or 1"""
 
 
 s = r'\s+'
@@ -56,9 +54,7 @@ text = """101 COM \t Computers
 # re.sub()
 
 print(re.sub(r'\s+', ' ', text))  # or
-print(regex.sub(' ',text))  # substitute whitespaces in text with single space
-
-# re.split()
+print(regex.sub(' ', text))  # substitute whitespaces in text with single space re.split()
 
 print(re.split(r'\s+', text))  # or
 print(regex.split(text))  # split text around 1 or more space characters
