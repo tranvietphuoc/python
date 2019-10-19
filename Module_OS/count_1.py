@@ -7,10 +7,10 @@ import os
 import re
 
 #  input the path
-try:
-    p = input('Input the path to the directory you want to count: ')
-except not os.path.isdir(p):
-    raise Exception('Your path is not a directory!')
+p = input('Input the path to the directory you want to count: ')
+if not os.path.isdir(p):
+    print('Your path is not a directory!')
+    exit(0)
 
 # print(p)
 
