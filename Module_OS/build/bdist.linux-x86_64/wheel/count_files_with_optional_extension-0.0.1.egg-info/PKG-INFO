@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: count-files-with-optional-extension
+Version: 0.0.1
+Summary: A small tool to count how many files with optional extension
+Home-page: https://github.com/tranvietphuoc/learn-python/Module_OS
+Author: Tran Viet Phuoc
+Author-email: phuoc.finn@gmail.com
+License: UNKNOWN
+Description: # Count files tool
+        This is a simple tool to count how many files with optional extension from input in optional directory
+        
+Platform: UNKNOWN
+Classifier: Programming Language: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
