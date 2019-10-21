@@ -1,3 +1,5 @@
+#! /usr/local/bin/python3
+
 '''Count all files with the extension of input
 of the current directory
 '''
