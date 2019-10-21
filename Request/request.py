@@ -1,4 +1,4 @@
-import requests 
+import requests
 from requests.exceptions import HTTPError
 import json
 
@@ -8,7 +8,7 @@ json_in = {
     "token": "5d8ba90858515e3d6722fe06",
     "OrderCode": "EIKXK4A3Y"
     }
-
+    
 try:
     response = requests.get(url, json_in)
 
@@ -29,4 +29,3 @@ response_content = response.text
 response_json = response.json
 print(response_heading)
 print(response_content)
-

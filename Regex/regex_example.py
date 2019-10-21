@@ -10,9 +10,9 @@ regex = re.compile(pattern1)
 # print(regex.findall(email,flags=re.IGNORECASE))
 print(re.findall(pattern1, email, flags=re.IGNORECASE))
 
-text = """Betty bought a bit of butter, 
-But the butter was so bitter, 
-So she bought some better butter, 
+text = """Betty bought a bit of butter,
+But the butter was so bitter,
+So she bought some better butter,
 To make the bitter butter better."""
 
 pattern2 = r'\bb\w+'
