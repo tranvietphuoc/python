@@ -1,16 +1,12 @@
+import requests
 from bs4 import BeautifulSoup
+import csv
+import re
 
 
-with open('./index.html') as f:
-    soup = BeautifulSoup(f, 'html.parser')
+r = requests.get('http://eloquentjavascript.net')
 
+print(r.status_code)
 
-
-soup = BeautifulSoup(html_doc, "html.parser")
-print(soup.prettify())
-
-
-for link in soup.find_all('a'):
-    print(link.get('href'))
-
-print(soup.title)
+soup = BeautifulSoup(r.content, 'lxml')
+print(soup.find_all('a'))
