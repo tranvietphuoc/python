@@ -1,13 +1,13 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
+import csv
+import re
 
 
-req = requests.get('https://vi.wikipedia.org/wiki/Python_(ng%C3%B4n_ng%E1%BB%AF_l%E1%BA%ADp_tr%C3%ACnh)')
-soup = BeautifulSoup(req.text, 'lxml')
-# with open('./index.html') as f:
-#     soup = BeautifulSoup(f, 'html.parser')
+r = requests.get('http://eloquentjavascript.net')
 
-# print(soup.get_text())
+print(r.status_code)
 
-for sub_heading in soup.find_all('a'):
-    print(sub_heading.text)
+soup = BeautifulSoup(r.content, 'lxml')
+print(soup.find_all('a'))
+
