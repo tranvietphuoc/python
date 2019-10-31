@@ -7,7 +7,7 @@ url = 'https://console.ghn.vn/api/v1/apiv3/OrderInfo'
 # url = 'https://dev-online-gateway.ghn.vn/apiv3-api/api/v1/apiv3/OrderInfo'
 data = {
     "token": "5db938e7113d124b11772692",
-    "OrderCode": ("EJAQ3YSN7", "EJ5415KU7")
+    "OrderCode": "EJAQ3YSN7"
     }
 
 headers = {
