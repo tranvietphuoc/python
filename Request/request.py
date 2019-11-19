@@ -10,7 +10,9 @@ import csv
 url = 'https://console.ghn.vn/api/v1/apiv3/OrderInfo'
 # url = 'https://dev-online-gateway.ghn.vn/apiv3-api/api/v1/apiv3/OrderInfo'
 
-OrderCodes = ["EJR7X6AXS", "EJY6X7D9A", "EJ5DQFFUL", "EJDQF6RFA", "EJSHH6HD9"]
+# OrderCodes = ["EJR7X6AXS", "EJY6X7D9A", "EJ5DQFFUL", "EJDQF6RFA", "EJSHH6HD9"]
+
+OrderCodes = ["EJR7X6AXS"]
 token = "5d8ba90858515e3d6722fe06"
 
 headers = {
@@ -39,8 +41,9 @@ for ordercode in OrderCodes:
         print('Success!')
         results.append(json.loads(r.text)['data'])
 
-with open('data.csv', 'w') as file:
-    csv_writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    csv_writer.writerow(['OrderCode', 'OrderStatus', 'ToDistrict', 'SortCode'])
-    for result in results:
-        csv_writer.writerow([result['OrderCode'], result['CurrentStatus'], result['ShippingAddress'], result['SortCode']])
+print(results)
+# with open('data.csv', 'w') as file:
+#     csv_writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+#     csv_writer.writerow(['OrderCode', 'OrderStatus', 'ToDistrict', 'SortCode'])
+#     for result in results:
+#         csv_writer.writerow([result['OrderCode'], result['CurrentStatus'], result['ShippingAddress'], result['SortCode']])
