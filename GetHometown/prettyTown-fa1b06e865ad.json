@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "prettytown",
+  "private_key_id": "fa1b06e865ad26a58ffa7e349a9b4f8198c8da41",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCTGZFtYd2mvfqE\nmXJHcncXU7cl4NdGcwA1D1OoypCqiwCWxxiR/XBmF5fq7gOgPhZcrUMqkY1m+UJF\n5Vy1ruoIMJG9BNtgv/GF6MMGI7ysZOblbmpPG4v9S9KASefJ1aWsR9Gtzt/ibYUA\nL5K6ZEiyUpRHdPDs/WzdqjINBQ80cW/Dsvsx2RgQM1Q9v+F4830vd7fW9nhcPFOt\nymQXJ4zdKPRUkJFGUAtfZiy04dmxrcKj7umEXr6SIglHerdha9WTiHb6Uu+7annc\nC7XRaQYvx4KKqgT/kJZjTm0fxVbOYTfdTTEAum6C6BOeFOEFYO85G3/6LkFzl1Wz\nAQasd9CDAgMBAAECggEAHiNxb+NKyhSHhO55gxj5PH7K+ghIoycBxl1HC0DBhien\nrbzKFHNEOa6g0iIE/SprY36eUdTzj0MHqJF3PsRBL/9fhMY/emGpRwHrH1FoITwl\nMKHAR0gCFRoZXW6G/ov2/0bRt5Y4ucgtpV2Z5vWQDXUs6z0S9cNwsDPkQFWmiVxa\n/uFVJlpzkC3NPnxCPRt1rQm6Vvds9/nbanfzjKr9Fw26xExY0E/lcuD/+dwa8+aS\nRFo1wMT3XtZs3V0ki4oAyiX3++wt5IuEMvs9O3HyyRKDK0PnRc0jRkwNTpz5++Bf\nyhfyDe7WB0Kr35MgcjYbbMNkcF4+qwX19z30SNYQ5QKBgQDEeC3NPTQVxsPZ/dUU\n1Z/jA063R2nizt5zVlAl0dAK1KKR6583CZYdMbzpOiYQu8IjZZXiirENj3Qif1cq\nNbaxqJPGwzBJgItjORxE8YjyeP4V8ycfn4awLLFrp7djx4PbSE9WXDw7qleTw56W\nHy1s+FuU+o4u9YIuucOJ+8OQlwKBgQC/q97JPUgYdRaRV4UhDWl0jA0aNZ9ToEhp\nKuLdMBVO4VILPhw85IHEtyvHOUL2QBCprutotGZ9PgO61xYB21O/i51WgWRLe/F2\nd+9BdwqApy0X3qIa8ePrbc+Qp/hHmn/8Zd37x8tnjN8G7Tte5uCDxWZ88sgBASUZ\nweePHIMQ9QKBgA6xQhOYIR4DyD+0GMw/EX7jj25rW8LHX6FWchXx89HrhuDMsxJl\nmCFEx/DVFWWo9OK6xRO09XqjILc3uKgCblAo4Cw8Co9kmofoDHIncetYGwA/N8zI\nnETugrIfT7qZgAXVCYHW0fZQTc5SEbj+SeJdTFP+zMU8POkLoVDfUAevAoGAb4Ke\napWsjA4SwxwX59LVt2iDduwbdZuahRTeR7DhtLKB+Oh5pTOMC9ZFMfKucnVzPET3\n0EKkHdkmcl0QAKSJZLblIp7EquXA5RuBpqSLB647Hdf4l5SC9UU9rPsMBxxruXvK\nWeEzBVt/pZf/IodPt1nw9mCI24y++O1Guovr9MECgYA4DFmHdBNIjKZGdR5q4AB3\nQArUM1p5B8fiiJ6RLlSRShCkmfDC/erLKOI76RtT3/RU82HPjQXuODB4+Izxty6r\naddeMou8xZvTvozWgpKUAhuh26uJptDSsI4xmSxkel4g1fomDAOoOFDgERivNvbW\ncm9IWMoIzhzWWXSY0eCEMQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "prettytown@prettytown.iam.gserviceaccount.com",
+  "client_id": "115423151602846818521",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/prettytown%40prettytown.iam.gserviceaccount.com"
+}
