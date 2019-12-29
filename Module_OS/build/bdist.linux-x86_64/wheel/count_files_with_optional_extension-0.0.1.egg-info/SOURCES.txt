@@ -1,5 +1,0 @@
-setup.py
-count_files_with_optional_extension.egg-info/PKG-INFO
-count_files_with_optional_extension.egg-info/SOURCES.txt
-count_files_with_optional_extension.egg-info/dependency_links.txt
-count_files_with_optional_extension.egg-info/top_level.txt
