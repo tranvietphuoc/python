@@ -1,17 +1,18 @@
 class HashMap:
-    def __init__(self, size):
+    def __init__(self, size=1):
         self.size = size
         self.map = [None] * size
 
+    # make a hash function
     def _get_hash(self, key):
-        hash = 0
+        hash_value = 0
         for char in str(key):
-            hash += ord(char)
-        return hash % self.size
+            hash_value += ord(char)
+        return hash_value % self.size
 
     def add(self, key, value):
         key_hash = self._get_hash(key)
-        key_value = [key, value]
+        key_value = (key, value)
 
         if self.map[key_hash] is None:
             self.map[key_hash] = list([key_value])
