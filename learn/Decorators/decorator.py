@@ -165,7 +165,9 @@ def tags(tagname):
         def wrapper(*args, **kargs):
             # notice here
             return "<{0}>{1}</{0}>".format(tagname, func(*args, **kargs))
+
         return wrapper
+
     return tags_decor
 
 
@@ -189,9 +191,12 @@ def benmark(func):
     def wrapper(*args, **kargs):
         t = time.perf_counter()
         res = func(*args, **kargs)
-        print(func.__name__, time.perf_counter()-t)
+        print(func.__name__, time.perf_counter() - t)
         return res
+
     return wrapper
+
+
 # write a decorator to write log of codes - print the function's name, which is called
 
 
@@ -200,17 +205,20 @@ def logging(func):
         res = func(*args, **kargs)
         print(func.__name__, args, kargs)
         return res
+
     return wrapper
+
 
 # write a decorator to count and print out the number of time to be called of function
 
 
 def count(func):
     def wrapper(*args, **kargs):
-        wrapper.count = wrapper.count+1
+        wrapper.count = wrapper.count + 1
         res = func(*args, **kargs)
-        print('{0} has been used: {1}x'.format(func.__name__, wrapper.count))
+        print("{0} has been used: {1}x".format(func.__name__, wrapper.count))
         return res
+
     wrapper.count = 0
     return wrapper
 
@@ -223,11 +231,15 @@ def reverse_string(string):
 
 
 print(reverse_string("hello, I'm Tran Viet Phuoc"))
-print(reverse_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+print(
+    reverse_string(
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"))
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+    )
+)
 # will print out
-'''
+"""
 reverse_string ("hello, I'm Tran Viet Phuoc",) {}
 wrapper 2.8547000000003764e-05
 wrapper has been used: 1x
@@ -236,4 +248,4 @@ reverse_string ('Lorem ipsum dolor sit amet, consectetur adipiscing elit,    sed
 wrapper 1.0270999999999197e-05
 wrapper has been used: 2x
 tauqesnoc odommoc ae xe piuqila tu isin sirobal ocmallu noitaticrexe durtson siuq     ,mainev minim da mine tU .auqila angam erolod te erobal tu tnudidicni ropmet domsuie od des    ,tile gnicsipida rutetcesnoc ,tema tis rolod muspi meroL
-'''
+"""

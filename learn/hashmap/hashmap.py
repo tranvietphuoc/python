@@ -1,4 +1,6 @@
 class HashMap:
+    """Demo hashmap in python."""
+
     def __init__(self, size=1):
         self.size = size
         self.map = [None] * size
