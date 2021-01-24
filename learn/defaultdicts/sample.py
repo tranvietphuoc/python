@@ -26,7 +26,7 @@ s = "misssisssgissaaaddssd"
 
 dd_i = defaultdict(int)  # set to int, default_factory is initialize to 0
 for letter in s:
-    dd[letter] += 1
+    dd_i[letter] += 1
 
 dd_i
 
